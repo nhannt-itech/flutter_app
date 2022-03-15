@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/views/login.dart';
 import 'package:flutter_app/views/register.dart';
 import 'package:flutter_app/views/forgot_password.dart';
+import 'package:flutter_app/views/home.dart';
 
 // Route Names
 const String loginPage = 'login';
 const String registerPage = 'register';
 const String forgotPasswordPage = 'forgotPassword';
+const String homePage = 'home';
 
 // Control our page route flow
 Route<dynamic> controller(RouteSettings settings) {
@@ -20,6 +22,8 @@ Route<dynamic> controller(RouteSettings settings) {
     case forgotPasswordPage:
       return MaterialPageRoute(
           builder: (context) => const ForgotPasswordPage());
+    case homePage:
+      return MaterialPageRoute(builder: (context) => const HomePage());
     default:
       throw ('This route name does not exit');
   }

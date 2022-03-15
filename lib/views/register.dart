@@ -93,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   width: double.infinity,
                   height: 60,
                   child: ElevatedButton(
-                      onPressed: onSignInClicked,
+                      onPressed: onSignUpClicked,
                       child: const Text("REGISTER NOW",
                           style: TextStyle(fontSize: 16)),
                       style: const ButtonStyle()),
@@ -131,5 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void onSignInClicked() {}
+  void onSignUpClicked() {
+    Navigator.pushNamed(context, route.homePage);
+  }
 }

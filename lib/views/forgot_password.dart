@@ -43,7 +43,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   width: double.infinity,
                   height: 60,
                   child: ElevatedButton(
-                      onPressed: onSignInClicked,
+                      onPressed: onForgotClicked,
                       child:
                           const Text("SUBMIT", style: TextStyle(fontSize: 16)),
                       style: const ButtonStyle()),
@@ -80,5 +80,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     );
   }
 
-  void onSignInClicked() {}
+  void onForgotClicked() {
+    Navigator.pushNamed(context, route.homePage);
+  }
 }

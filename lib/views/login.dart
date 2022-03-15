@@ -101,5 +101,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void onSignInClicked() {}
+  void onSignInClicked() {
+    Navigator.pushNamed(context, route.homePage);
+  }
 }
