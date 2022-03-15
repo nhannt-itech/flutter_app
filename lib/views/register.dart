@@ -109,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         onTap: () {
                           Navigator.pushNamed(context, route.loginPage);
                         },
-                        child: const Text("LOGIN",
+                        child: const Text("SIGN IN",
                             style: TextStyle(
                                 fontSize: 15, color: Color(0xff888888))),
                       ),
