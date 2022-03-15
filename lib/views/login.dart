@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/routes/route.dart' as route;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,24 +13,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-          padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-          constraints: const BoxConstraints.expand(),
-          color: Colors.white,
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(30, 100, 30, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
-                child: Container(
-                    width: 70,
-                    height: 70,
-                    padding: const EdgeInsets.all(15),
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: Color(0xffd8d8d8)),
-                    child: const FlutterLogo()),
-              ),
               const Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 60),
                 child: Text("Hello\nWelcome Back",
@@ -43,18 +32,17 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextField(
                   style: TextStyle(fontSize: 18, color: Colors.black),
                   decoration: InputDecoration(
-                      labelText: "USERNAME",
+                      labelText: "EMAIL",
                       labelStyle:
                           TextStyle(color: Color(0xff888888), fontSize: 15)),
                 ),
               ),
-              // ignore: prefer_const_literals_to_create_immutables
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
-                child: Stack(alignment: AlignmentDirectional.centerEnd,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: <Widget>[
-                      const TextField(
+                child: Stack(
+                    alignment: AlignmentDirectional.centerEnd,
+                    children: const <Widget>[
+                      TextField(
                         style: TextStyle(fontSize: 18, color: Colors.black),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -62,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                             labelStyle: TextStyle(
                                 color: Color(0xff888888), fontSize: 15)),
                       ),
-                      const Text("SHOW",
+                      Text("SHOW",
                           style: TextStyle(
                               color: Colors.blue,
                               fontSize: 13,
@@ -81,18 +69,29 @@ class _LoginPageState extends State<LoginPage> {
                       style: const ButtonStyle()),
                 ),
               ),
-              Container(
+              SizedBox(
                   height: 130,
                   width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Text("NEW USER? SIGN UP",
-                          style: TextStyle(
-                              fontSize: 15, color: Color(0xff888888))),
-                      Text("FORGOT PASSWORD",
-                          style:
-                              TextStyle(fontSize: 15, color: Color(0xff888888)))
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, route.registerPage);
+                        },
+                        child: const Text("NEW USER? SIGN UP",
+                            style: TextStyle(
+                                fontSize: 15, color: Color(0xff888888))),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, route.forgotPasswordPage);
+                        },
+                        child: const Text("FORGOT PASSWORD",
+                            style: TextStyle(
+                                fontSize: 15, color: Color(0xff888888))),
+                      )
                     ],
                   ))
             ],
