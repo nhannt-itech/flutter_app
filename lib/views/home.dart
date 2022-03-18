@@ -61,74 +61,66 @@ class _HomePageState extends State<HomePage> {
                           style: const ButtonStyle()),
                     ]),
               ),
-              Row(
+              ListView(
+                shrinkWrap: true,
+                padding: const EdgeInsets.all(20.0),
                 children: <Widget>[
-                  Checkbox(
-                      checkColor: Colors.white,
-                      value: false,
-                      onChanged: onSignInClicked1),
-                  const Text("Need to do",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                      )),
+                  Row(
+                    children: <Widget>[
+                      Checkbox(
+                          checkColor: Colors.white,
+                          value: false,
+                          onChanged: onSignInClicked1),
+                      const Text("Need to do",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                          )),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Checkbox(
+                          checkColor: Colors.white,
+                          value: false,
+                          onChanged: onSignInClicked1),
+                      const Text("Need to do",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                          )),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Checkbox(
+                          checkColor: Colors.white,
+                          value: true,
+                          onChanged: onSignInClicked1),
+                      const Text("Have done",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            decoration: TextDecoration.lineThrough,
+                          )),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Checkbox(
+                          checkColor: Colors.white,
+                          value: true,
+                          onChanged: onSignInClicked1),
+                      const Text("Have done",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            decoration: TextDecoration.lineThrough,
+                          )),
+                    ],
+                  ),
                 ],
-              ),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                      checkColor: Colors.white,
-                      value: false,
-                      onChanged: onSignInClicked1),
-                  const Text("Need to do",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                      )),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                      checkColor: Colors.white,
-                      value: true,
-                      onChanged: onSignInClicked1),
-                  const Text("Have done",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        decoration: TextDecoration.lineThrough,
-                      )),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                      checkColor: Colors.white,
-                      value: true,
-                      onChanged: onSignInClicked1),
-                  const Text("Have done",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        decoration: TextDecoration.lineThrough,
-                      )),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                      checkColor: Colors.white,
-                      value: true,
-                      onChanged: onSignInClicked1),
-                  const Text("Have done",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        decoration: TextDecoration.lineThrough,
-                      )),
-                ],
-              ),
+              )
             ],
           ),
         ),
